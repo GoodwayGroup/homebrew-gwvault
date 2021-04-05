@@ -5,29 +5,29 @@
 class Gwvault < Formula
   desc "GoodwayGroup Ansible Vault - ansible-vault CLI reimplemented in go"
   homepage "https://goodwaygroup.github.io/gwvault/"
-  version "2.1.2"
+  version "2.1.3"
   license "MIT"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/GoodwayGroup/gwvault/releases/download/v2.1.2/gwvault_2.1.2_darwin_amd64.tar.gz"
-    sha256 "03aeced1360463953c00546412bf66dbfacdfc35298a315f94cddd5e3e98277c"
+    url "https://github.com/GoodwayGroup/gwvault/releases/download/v2.1.3/gwvault_2.1.3_darwin_amd64.tar.gz"
+    sha256 "315edf1f076e49982a806fdea49ebba1e374306db7831f145ba8ef1378bccaa8"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/GoodwayGroup/gwvault/releases/download/v2.1.2/gwvault_2.1.2_darwin_arm64.tar.gz"
-    sha256 "0ac0f4d61c71e583b0fdaae8da79d579b2e331d31e042dc4ce87e3620527dbde"
+    url "https://github.com/GoodwayGroup/gwvault/releases/download/v2.1.3/gwvault_2.1.3_darwin_arm64.tar.gz"
+    sha256 "2d9328e4107b14a986b13b68d96201ef66f3e9d8d2a9dcb74663d7c2a722f0e8"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/GoodwayGroup/gwvault/releases/download/v2.1.2/gwvault_2.1.2_linux_amd64.tar.gz"
-    sha256 "bb107b6fce8e69b9465d2c920224be64da0f58b25f857048a27a137bd9f24b57"
+    url "https://github.com/GoodwayGroup/gwvault/releases/download/v2.1.3/gwvault_2.1.3_linux_amd64.tar.gz"
+    sha256 "7a6024e4a3def3fe13865c3c01aff8017df899fa3532a93388c99f0dd6b78bee"
   end
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/GoodwayGroup/gwvault/releases/download/v2.1.2/gwvault_2.1.2_linux_armv6.tar.gz"
-    sha256 "65e8cd954dcf7c77e2cd802996cb4fe2510a71916b113008ceff909478efd4df"
+    url "https://github.com/GoodwayGroup/gwvault/releases/download/v2.1.3/gwvault_2.1.3_linux_armv6.tar.gz"
+    sha256 "7a3aaf3c4b23a0f16d754520bc441afc63972ea62bb1ecf2ba93a0c47f2d8994"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/GoodwayGroup/gwvault/releases/download/v2.1.2/gwvault_2.1.2_linux_arm64.tar.gz"
-    sha256 "bcbeacc4de1707aabec20f18bff3c0ada1821ddbacc044a5960cf4a169072c38"
+    url "https://github.com/GoodwayGroup/gwvault/releases/download/v2.1.3/gwvault_2.1.3_linux_arm64.tar.gz"
+    sha256 "616bc4b7b9ecf7c853f9077a18197a368d7bffc71c5bb7e1fbbbfa480abe1afa"
   end
 
   def install
