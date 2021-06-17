@@ -5,29 +5,34 @@
 class Gwvault < Formula
   desc "GoodwayGroup Ansible Vault - ansible-vault CLI reimplemented in go"
   homepage "https://goodwaygroup.github.io/gwvault/"
-  version "2.1.4"
+  version "2.1.5"
   license "MIT"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/GoodwayGroup/gwvault/releases/download/2.1.4/gwvault_2.1.4_darwin_amd64.tar.gz"
-    sha256 "f7bfb7a4935b99472193bb719ff5d7d020e0b83b5bb45933a0388efc941bc634"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/GoodwayGroup/gwvault/releases/download/v2.1.5/gwvault_2.1.5_darwin_amd64.tar.gz"
+      sha256 "ed46b3f5d59ab2a3c1e907e8def423df43e18f0538d8b667636312e1e8c4854d"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/GoodwayGroup/gwvault/releases/download/v2.1.5/gwvault_2.1.5_darwin_arm64.tar.gz"
+      sha256 "f02491207c7c873123ed3353c81dd73ed990aee8453d906ed9c7b115e5570323"
+    end
   end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/GoodwayGroup/gwvault/releases/download/2.1.4/gwvault_2.1.4_darwin_arm64.tar.gz"
-    sha256 "c083cb7d61647a30c034db3496f786271f1356c95ec8261515b683f83f0a4a29"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/GoodwayGroup/gwvault/releases/download/2.1.4/gwvault_2.1.4_linux_amd64.tar.gz"
-    sha256 "9324b4e7de250a3e4afd912df880a6cf9b4cf55b9090ee7fc64fe9a61497342b"
-  end
-  if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/GoodwayGroup/gwvault/releases/download/2.1.4/gwvault_2.1.4_linux_armv6.tar.gz"
-    sha256 "7cda5ded2c08e0c1e3a5ece1d0a3ed36c3bd7b6c313a991611a118cc92b4a205"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/GoodwayGroup/gwvault/releases/download/2.1.4/gwvault_2.1.4_linux_arm64.tar.gz"
-    sha256 "af4913ba58a61cd73559b4d1b3173beacbdb649666f3e3dc687e63f6afb30c11"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/GoodwayGroup/gwvault/releases/download/v2.1.5/gwvault_2.1.5_linux_amd64.tar.gz"
+      sha256 "247492ce65f5e48a533b2aaf29577eb3209ac872ffe3ea1435dc39eb1fa22a5e"
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/GoodwayGroup/gwvault/releases/download/v2.1.5/gwvault_2.1.5_linux_armv6.tar.gz"
+      sha256 "cc4d13f2d2ff46b6e618454c6f073eb6df23c27f5a598b961ea87c696bd8c825"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/GoodwayGroup/gwvault/releases/download/v2.1.5/gwvault_2.1.5_linux_arm64.tar.gz"
+      sha256 "f4d074b97ca81438fda12fdc35f4da2ea064c0375bb290085eb171fd44d23ac1"
+    end
   end
 
   def install
